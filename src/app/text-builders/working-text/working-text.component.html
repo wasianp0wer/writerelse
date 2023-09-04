@@ -1,0 +1,18 @@
+<div *ngIf="!!spacingFromLeft" [ngStyle]="{'width': spacingFromLeft.toString() + 'in'}" style="display: inline-block"></div>
+
+<span
+  #thistext
+  [contentEditable]="editable"
+  (mousedown)="editable = true; isMouseDown = true"
+  (mouseup)="handleMouseUp()"
+  (blur)="editable = false"
+  (mousemove)="makeHighlightable()"
+  [class]="textType + ' screenplay'"
+>
+  <ng-content></ng-content>
+</span>
+<br/>
+<!-- expected behavior when keydown: -->
+<!-- if full text of a working text component is highlighted, delete it -->
+<!-- if partial text is highlighted, delete that text but leave the unhighlighted text -->
+<!-- begin text insertion at start of selection -->
