@@ -1,1 +1,1 @@
-<working-text [spacingFromLeft]="2.2" [ngStyle]="{'text-transform': enforceCaps ? 'uppercase' : 'none'}">character</working-text>
+<working-text [index]="index" [spacingFromLeft]="2.2" [ngStyle]="{'text-transform': enforceCaps ? 'uppercase' : 'none'}" (keyPressed)="keyPressed.emit($event)" [textType]="textType"><ng-content></ng-content></working-text>

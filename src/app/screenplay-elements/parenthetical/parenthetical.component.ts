@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ScreenplayElementType } from '../../paper/page-holder/page-holder.component';
 
 @Component({
   selector: 'parenthetical',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parenthetical.component.scss']
 })
 export class ParentheticalComponent implements OnInit {
+  @Input() index!: number;
+  @Output() keyPressed: EventEmitter<KeyboardEvent> = new EventEmitter();
+
+  textType = ScreenplayElementType.parenthetical;
 
   constructor() { }
 

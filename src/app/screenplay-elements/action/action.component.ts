@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ScreenplayElementType } from '../../paper/page-holder/page-holder.component';
 
 @Component({
   selector: 'action',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./action.component.scss']
 })
 export class ActionComponent implements OnInit {
+  @Input() index!: number;
+
+  @Output() keyPressed: EventEmitter<KeyboardEvent> = new EventEmitter();
+
+  textType = ScreenplayElementType.action;
 
   constructor() { }
 

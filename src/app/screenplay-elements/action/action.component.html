@@ -1,1 +1,1 @@
-<working-text [spacingFromLeft]="0">action</working-text>
+<working-text [spacingFromLeft]="0" (keyPressed)="keyPressed.emit($event)" [textType]="textType" [index]="index"><ng-content></ng-content></working-text>

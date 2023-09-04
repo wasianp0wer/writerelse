@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { ScreenplayElementType } from '../../paper/page-holder/page-holder.component';
 
 @Component({
   selector: 'working-text',
@@ -7,10 +8,12 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, View
 })
 export class WorkingTextComponent implements AfterViewInit {
   @Input() isMouseDown?: boolean;
-  @Input() textType?: string;
+  @Input() textType?: ScreenplayElementType;
   @Input() spacingFromLeft = 0;
+  @Input() index!: number;
 
   @Output() isMouseDownChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() keyPressed: EventEmitter<KeyboardEvent> = new EventEmitter();
 
   @ViewChild('thistext') textboxRef: ElementRef;
 
@@ -37,5 +40,9 @@ export class WorkingTextComponent implements AfterViewInit {
     setTimeout(() => {
       this.textboxRef.nativeElement.focus();
     }, 0);
+  }
+
+  handleKeyPress($event: KeyboardEvent) {
+    this.keyPressed.emit($event);
   }
 }

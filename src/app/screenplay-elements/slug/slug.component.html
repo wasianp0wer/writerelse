@@ -1,1 +1,1 @@
-<working-text style="text-transform: uppercase;">SLUG</working-text>
+<working-text [ngStyle]="{'text-transform': enforceCaps ? 'uppercase' : 'none'}" (keyPressed)="keyPressed.emit($event)" [textType]="textType" [index]="index"><ng-content></ng-content></working-text>

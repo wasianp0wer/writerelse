@@ -1,0 +1,10 @@
+<page>
+  <div *ngFor="let element of screenplay; let i = index">
+    <action *ngIf="element.type===screenplayElementType.action" (keyPressed)="handleKeypress(screenplayElementType.action, i, $event)" [index]="i">{{element.content}}</action>
+    <character *ngIf="element.type===screenplayElementType.character" (keyPressed)="handleKeypress(screenplayElementType.character, i, $event)" [index]="i">{{element.content}}</character>
+    <dialogue *ngIf="element.type===screenplayElementType.dialogue" (keyPressed)="handleKeypress(screenplayElementType.dialogue, i, $event)" [index]="i">{{element.content}}</dialogue>
+    <parenthetical *ngIf="element.type===screenplayElementType.parenthetical" (keyPressed)="handleKeypress(screenplayElementType.parenthetical, i, $event)" [index]="i">{{element.content}}</parenthetical>
+    <slug *ngIf="element.type===screenplayElementType.slug" (keyPressed)="handleKeypress(screenplayElementType.slug, i, $event)" [index]="i">{{element.content}}</slug>
+    <transition *ngIf="element.type===screenplayElementType.transition" (keyPressed)="handleKeypress(screenplayElementType.transition, i, $event)" [index]="i">{{element.content}}</transition>
+  </div>
+</page>
