@@ -8,8 +8,10 @@ import { ScreenplayElementType } from '../../paper/page-holder/page-holder.compo
 })
 export class ActionComponent implements OnInit {
   @Input() index!: number;
+  @Input() model!: string;
 
   @Output() keyPressed: EventEmitter<KeyboardEvent> = new EventEmitter();
+  @Output() modelChange: EventEmitter<string> = new EventEmitter();
 
   textType = ScreenplayElementType.action;
 

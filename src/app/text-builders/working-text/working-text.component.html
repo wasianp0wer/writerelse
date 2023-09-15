@@ -1,9 +1,13 @@
-<div *ngIf="!!spacingFromLeft" [ngStyle]="{'width': spacingFromLeft.toString() + 'in'}" style="display: inline-block; height: 12px"></div>
+<div
+  *ngIf="!!spacingFromLeft"
+  [ngStyle]="{ width: spacingFromLeft.toString() + 'in' }"
+  style="display: inline-block; height: 12px"
+></div>
 
 <span
   #thistext
   [contentEditable]="editable"
-  id="line-{{index}}"
+  id="line-{{ index }}"
   (mousedown)="editable = true; isMouseDown = true"
   (mouseup)="handleMouseUp()"
   (blur)="editable = false"
@@ -11,8 +15,9 @@
   (mousemove)="makeHighlightable()"
   (keydown)="handleKeyPress($event)"
   [class]="textType + ' screenplay'"
+  [textContent]="model"
+  (input)="updateModel()"
 >
-  <ng-content></ng-content>
 </span>
 <br />
 <!-- expected behavior when keydown: -->

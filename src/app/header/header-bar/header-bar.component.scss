@@ -1,0 +1,70 @@
+/* header.component.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f0f0f0;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  transition: height 0.3s ease;
+}
+
+.collapsed {
+  height: 15px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.tabs {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0px;
+}
+
+.tabs li {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tabs li.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.tab-content {
+  margin-top: 10px;
+}
+
+.collapse-button {
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+  width: 100%;
+}
+
+.collapse-button:hover {
+  background-color: lightgray;
+}
+
+.header-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  width: 25px;
+}
+
+.header-button:hover {
+  text-shadow: 2px 2px gray;
+  background-color: lightgray;
+}
+
+.header-button:active:hover {
+  background-color: gray;
+}

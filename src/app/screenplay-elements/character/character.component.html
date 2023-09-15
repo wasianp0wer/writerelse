@@ -1,1 +1,12 @@
-<working-text [index]="index" [spacingFromLeft]="2.2" [ngStyle]="{'text-transform': enforceCaps ? 'uppercase' : 'none'}" (keyPressed)="keyPressed.emit($event)" [textType]="textType"><ng-content></ng-content></working-text>
+<div style="height: 12px; width: 1px"></div>
+<working-text
+  [index]="index"
+  [spacingFromLeft]="2.2"
+  [ngStyle]="{ 'text-transform': enforceCaps ? 'uppercase' : 'none' }"
+  (keyPressed)="keyPressed.emit($event)"
+  [textType]="textType"
+  [(model)]="model"
+  (modelChange)="modelChange.emit(model)"
+>
+  <ng-content></ng-content>
+</working-text>

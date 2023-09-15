@@ -1,0 +1,22 @@
+<!-- header.component.html -->
+<div class="header" [ngClass]="{ collapsed: isCollapsed }">
+  <ul class="tabs" *ngIf="!isCollapsed">
+    <li (click)="changeTab(headerTab.home)" [class.active]="activeTab === headerTab.home">Home</li>
+    <li (click)="changeTab(headerTab.edit)" [class.active]="activeTab === headerTab.edit">Edit</li>
+    <li (click)="changeTab(headerTab.view)" [class.active]="activeTab === headerTab.view">View</li>
+  </ul>
+  <div class="tab-content" *ngIf="!isCollapsed">
+    <div *ngIf="activeTab === headerTab.home">
+      <button class="header-button">📄</button>
+      <button class="header-button">📁</button>
+      <button class="header-button" (click)="save()">💾</button>
+    </div>
+    <div *ngIf="activeTab === headerTab.edit">:4</div>
+    <div *ngIf="activeTab === headerTab.view">:5</div>
+  </div>
+  <button class="collapse-button" (click)="toggleCollapse()">
+    <div [ngStyle]="{ transform: isCollapsed ? 'rotate(90deg)' : 'rotate(270deg)' }" style="display: inline-block">
+      »
+    </div>
+  </button>
+</div>

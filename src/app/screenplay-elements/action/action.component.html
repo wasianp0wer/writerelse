@@ -1,1 +1,10 @@
-<working-text [spacingFromLeft]="0" (keyPressed)="keyPressed.emit($event)" [textType]="textType" [index]="index"><ng-content></ng-content></working-text>
+<div style="height: 12px; width: 1px"></div>
+<working-text
+  [spacingFromLeft]="0"
+  (keyPressed)="keyPressed.emit($event)"
+  [textType]="textType"
+  [index]="index"
+  [(model)]="model"
+  (modelChange)="modelChange.emit(model)"
+  ><ng-content></ng-content
+></working-text>

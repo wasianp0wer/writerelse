@@ -4,18 +4,19 @@ import { ScreenplayElementType } from '../../paper/page-holder/page-holder.compo
 @Component({
   selector: 'character',
   templateUrl: './character.component.html',
-  styleUrls: ['./character.component.scss']
+  styleUrls: ['./character.component.scss'],
 })
 export class CharacterComponent implements OnInit {
   @Input() index!: number;
   @Input() enforceCaps = true;
+  @Input() model!: string;
+
   @Output() keyPressed: EventEmitter<KeyboardEvent> = new EventEmitter();
+  @Output() modelChange: EventEmitter<string> = new EventEmitter();
 
   textType = ScreenplayElementType.character;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

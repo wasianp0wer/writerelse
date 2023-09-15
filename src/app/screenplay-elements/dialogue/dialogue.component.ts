@@ -4,17 +4,18 @@ import { ScreenplayElementType } from '../../paper/page-holder/page-holder.compo
 @Component({
   selector: 'dialogue',
   templateUrl: './dialogue.component.html',
-  styleUrls: ['./dialogue.component.scss']
+  styleUrls: ['./dialogue.component.scss'],
 })
 export class DialogueComponent implements OnInit {
   @Input() index!: number;
+  @Input() model!: string;
+
   @Output() keyPressed: EventEmitter<KeyboardEvent> = new EventEmitter();
+  @Output() modelChange: EventEmitter<string> = new EventEmitter();
 
   textType = ScreenplayElementType.dialogue;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

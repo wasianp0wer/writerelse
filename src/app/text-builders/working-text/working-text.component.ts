@@ -1,4 +1,14 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
 import { ScreenplayElementType } from '../../paper/page-holder/page-holder.component';
 
 @Component({
@@ -7,13 +17,16 @@ import { ScreenplayElementType } from '../../paper/page-holder/page-holder.compo
   styleUrls: ['./working-text.component.scss'],
 })
 export class WorkingTextComponent implements AfterViewInit {
+  // MAJOR TODO: changing the text isn't actually changing the screenplay object due to the lack of an ngmodel. must fix asap.
   @Input() isMouseDown?: boolean;
   @Input() textType?: ScreenplayElementType;
   @Input() spacingFromLeft = 0;
   @Input() index!: number;
+  @Input() model!: string;
 
   @Output() isMouseDownChange: EventEmitter<boolean> = new EventEmitter();
   @Output() keyPressed: EventEmitter<KeyboardEvent> = new EventEmitter();
+  @Output() modelChange: EventEmitter<string> = new EventEmitter();
 
   @ViewChild('thistext') textboxRef: ElementRef;
 
@@ -44,5 +57,10 @@ export class WorkingTextComponent implements AfterViewInit {
 
   handleKeyPress($event: KeyboardEvent) {
     this.keyPressed.emit($event);
+  }
+
+  updateModel() {
+    this.model = this.textboxRef.nativeElement.textContent;
+    this.modelChange.emit(this.model);
   }
 }

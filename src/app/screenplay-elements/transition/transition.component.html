@@ -1,1 +1,11 @@
-<working-text [spacingFromLeft]="4.5" style="text-transform: uppercase;" (keyPressed)="keyPressed.emit($event)"  [textType]="textType" [index]="index"><ng-content></ng-content></working-text>
+<div style="height: 12px; width: 1px"></div>
+<working-text
+  [spacingFromLeft]="4.5"
+  style="text-transform: uppercase"
+  (keyPressed)="keyPressed.emit($event)"
+  [textType]="textType"
+  [index]="index"
+  [(model)]="model"
+  (modelChange)="modelChange.emit(model)"
+  ><ng-content></ng-content
+></working-text>
