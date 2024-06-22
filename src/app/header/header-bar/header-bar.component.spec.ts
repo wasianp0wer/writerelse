@@ -8,8 +8,8 @@ describe('HeaderBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderBarComponent ]
-    })
+    imports: [HeaderBarComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(HeaderBarComponent);

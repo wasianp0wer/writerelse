@@ -2,10 +2,30 @@ import { Component, inject, Inject, Input, OnInit } from '@angular/core';
 import { Page } from 'playwright';
 import { ConfigurationService } from '../../service/configuration.service';
 import { FocusService } from '../../service/focus.service';
+import { TransitionComponent } from '../../screenplay-elements/transition/transition.component';
+import { SlugComponent } from '../../screenplay-elements/slug/slug.component';
+import { ParentheticalComponent } from '../../screenplay-elements/parenthetical/parenthetical.component';
+import { DialogueComponent } from '../../screenplay-elements/dialogue/dialogue.component';
+import { CharacterComponent } from '../../screenplay-elements/character/character.component';
+import { ActionComponent } from '../../screenplay-elements/action/action.component';
+import { NgFor, NgIf } from '@angular/common';
+import { SinglePageComponent } from '../single-page/single-page.component';
 @Component({
-  selector: 'page-holder',
-  templateUrl: './page-holder.component.html',
-  styleUrls: ['./page-holder.component.scss'],
+    selector: 'page-holder',
+    templateUrl: './page-holder.component.html',
+    styleUrls: ['./page-holder.component.scss'],
+    standalone: true,
+    imports: [
+        SinglePageComponent,
+        NgFor,
+        NgIf,
+        ActionComponent,
+        CharacterComponent,
+        DialogueComponent,
+        ParentheticalComponent,
+        SlugComponent,
+        TransitionComponent,
+    ],
 })
 export class PageHolderComponent implements OnInit {
   @Input() screenplay: PageElement[] = [

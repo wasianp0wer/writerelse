@@ -1,9 +1,16 @@
 import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 
 @Component({
-  selector: 'header-bar',
-  templateUrl: './header-bar.component.html',
-  styleUrls: ['./header-bar.component.scss'],
+    selector: 'header-bar',
+    templateUrl: './header-bar.component.html',
+    styleUrls: ['./header-bar.component.scss'],
+    standalone: true,
+    imports: [
+        NgClass,
+        NgIf,
+        NgStyle,
+    ],
 })
 export class HeaderBarComponent {
   @Output() saveEmitter: EventEmitter<undefined> = new EventEmitter<undefined>();

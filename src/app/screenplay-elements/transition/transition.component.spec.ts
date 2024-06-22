@@ -8,8 +8,8 @@ describe('TransitionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TransitionComponent ]
-    })
+    imports: [TransitionComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(TransitionComponent);

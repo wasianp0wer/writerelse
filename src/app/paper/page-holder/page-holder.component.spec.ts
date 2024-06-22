@@ -8,8 +8,8 @@ describe('PageHolderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageHolderComponent ]
-    })
+    imports: [PageHolderComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PageHolderComponent);

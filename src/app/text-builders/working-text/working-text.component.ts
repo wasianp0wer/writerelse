@@ -10,11 +10,14 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ScreenplayElementType } from '../../paper/page-holder/page-holder.component';
+import { NgIf, NgStyle } from '@angular/common';
 
 @Component({
-  selector: 'working-text',
-  templateUrl: './working-text.component.html',
-  styleUrls: ['./working-text.component.scss'],
+    selector: 'working-text',
+    templateUrl: './working-text.component.html',
+    styleUrls: ['./working-text.component.scss'],
+    standalone: true,
+    imports: [NgIf, NgStyle],
 })
 export class WorkingTextComponent implements AfterViewInit {
   // MAJOR TODO: changing the text isn't actually changing the screenplay object due to the lack of an ngmodel. must fix asap.

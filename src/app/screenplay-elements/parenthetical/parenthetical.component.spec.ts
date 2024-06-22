@@ -8,8 +8,8 @@ describe('ParentheticalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ParentheticalComponent ]
-    })
+    imports: [ParentheticalComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(ParentheticalComponent);
