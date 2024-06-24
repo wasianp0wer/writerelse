@@ -11,21 +11,21 @@ import { ActionComponent } from '../../screenplay-elements/action/action.compone
 import { NgFor, NgIf } from '@angular/common';
 import { SinglePageComponent } from '../single-page/single-page.component';
 @Component({
-    selector: 'page-holder',
-    templateUrl: './page-holder.component.html',
-    styleUrls: ['./page-holder.component.scss'],
-    standalone: true,
-    imports: [
-        SinglePageComponent,
-        NgFor,
-        NgIf,
-        ActionComponent,
-        CharacterComponent,
-        DialogueComponent,
-        ParentheticalComponent,
-        SlugComponent,
-        TransitionComponent,
-    ],
+  selector: 'page-holder',
+  templateUrl: './page-holder.component.html',
+  styleUrls: ['./page-holder.component.scss'],
+  standalone: true,
+  imports: [
+    SinglePageComponent,
+    NgFor,
+    NgIf,
+    ActionComponent,
+    CharacterComponent,
+    DialogueComponent,
+    ParentheticalComponent,
+    SlugComponent,
+    TransitionComponent,
+  ],
 })
 export class PageHolderComponent implements OnInit {
   @Input() screenplay: PageElement[] = [
@@ -52,7 +52,6 @@ export class PageHolderComponent implements OnInit {
 
   handleKeypress(previousElement: ScreenplayElementType, index: number, event: KeyboardEvent) {
     const config = this.configurationService.getKeyConfiguration();
-    console.log(event.key);
     switch (event.key) {
       case config.newLine: {
         event.preventDefault();
