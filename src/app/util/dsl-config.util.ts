@@ -1,8 +1,10 @@
 import { deserialize } from 'v8';
 import { ConfigRules } from '../model/config/config-rules';
 import { Config } from 'electron';
+import { OnInit } from '@angular/core';
 
 export class DslConfigUtil {
+
   static testConfig: string = `{
    "name":"Screenplay",
    "sceneDelimeter":"slug",
@@ -103,5 +105,9 @@ export class DslConfigUtil {
     const test = new ConfigRules(this.testConfig);
     console.log(test);
     console.log(test.pageHeight);
+  }
+
+  static getCurrentConfig() {
+    return new ConfigRules(this.testConfig);
   }
 }
